@@ -52,10 +52,12 @@ var listElement = document.querySelector('#muppets-list');
 
 var muppetsHTMLArray = [];
 
-for (var index = 0; index < muppetsData.length; index ++) {
+var muppetIndex, muppetData, muppetHTML, muppetsHTML;
 
-  var muppetData = muppetsData[index];
-  var muppetHTML = `
+for (index = 0; index < muppetsData.length; index ++) {
+
+  muppetData = muppetsData[index];
+  muppetHTML = `
   <a href="${muppetData.wikiURL}" target="_blank" class="list-group-item list-group-item-action flex-column">
     <h1>${muppetData.name}</h1>
     <img class="img-thumbnail" src="${muppetData.imageURL}"/>
@@ -68,7 +70,7 @@ for (var index = 0; index < muppetsData.length; index ++) {
 }
 
 
-var muppetsHTML = muppetsHTMLArray.join('');
+muppetsHTML = muppetsHTMLArray.join('');
 
 // Render the content
 listElement.innerHTML = muppetsHTML;
